@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeeksforGeeks Campus Club RIT</title>
+    <meta name="description" content="The official GeeksforGeeks Campus Club at RIT. Join our coding community, participate in events, and build your DSA and development skills.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-box">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <span>GfG RIT</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="#community" class="nav-link">Community</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+                <button class="btn btn-primary" id="join-btn">Join Club</button>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#events" class="mobile-nav-link">Events</a>
+            <a href="#resources" class="mobile-nav-link">Resources</a>
+            <a href="#community" class="mobile-nav-link">Community</a>
+            <a href="#contact" class="mobile-nav-link">Contact Us</a>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Join Club</button>
+        </div>
+    </div>
+
+    <header class="hero" id="home">
+        <div class="hero-canvas">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    <span class="badge-text">Official Campus Club</span>
+                </div>
+                <h1 class="hero-title">Shape the Future of <span class="text-gradient">Tech at RIT</span></h1>
+                <p class="hero-subtitle">The central digital platform for our campus coding community. Showcase activities, manage events, and elevate your programming skills with GeeksforGeeks.</p>
+                <div class="hero-actions">
+                    <a href="#events" class="btn btn-primary btn-lg">Explore Events <i class='bx bx-right-arrow-alt'></i></a>
+                    <a href="#resources" class="btn btn-glass btn-lg">Start Learning</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5K+</span>
+                        <span class="stat-label">Lines of Code</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Active Members</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Events Hosted</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card main-card">
+                    <div class="card-header">
+                        <div class="window-controls">
+                            <span class="dot dot-r"></span>
+                            <span class="dot dot-y"></span>
+                            <span class="dot dot-g"></span>
+                        </div>
+                        <span class="code-title">main.cpp</span>
+                    </div>
+                    <div class="code-content">
+<pre><code><span class="kwd">#include</span> <span class="str">&lt;iostream&gt;</span>
+
+<span class="kwd">int</span> <span class="fc">main</span>() {
+    <span class="c">std</span>::<span class="c">cout</span> &lt;&lt; <span class="str">"Hello, GfG RIT!"</span> &lt;&lt; <span class="c">std</span>::<span class="c">endl</span>;
+    <span class="kwd">while</span>(<span class="kwd">true</span>) {
+        <span class="fc">learn</span>();
+        <span class="fc">code</span>();
+        <span class="fc">innovate</span>();
+    }
+    <span class="kwd">return</span> <span class="num">0</span>;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">About the <span class="text-gradient">Club</span></h2>
+                <p class="section-subtitle">Empowering students to achieve technical excellence and foster a collaborative environment.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="card-icon"><i class='bx bx-target-lock'></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To cultivate a robust coding culture at RIT by providing resources, mentorship, and a platform for students to hone their Data Structures, Algorithms, and Development skills.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon"><i class='bx bx-bulb'></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be the premier technical community on campus, transforming passionate learners into industry-ready professionals through practical experience and peer-to-peer learning.</p>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3 class="subsection-title text-center">Meet the Coordinators</h3>
+                <div class="team-grid">
+                    <div class="team-member glass-card">
+                        <div class="member-avatar">
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <h4 class="member-name">Alex Johnson</h4>
+                        <p class="member-role">President</p>
+                        <div class="member-socials">
+                            <a href="#"><i class='bx bxl-linkedin'></i></a>
+                            <a href="#"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member glass-card">
+                        <div class="member-avatar">
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <h4 class="member-name">Sarah Williams</h4>
+                        <p class="member-role">Technical Lead</p>
+                        <div class="member-socials">
+                            <a href="#"><i class='bx bxl-linkedin'></i></a>
+                            <a href="#"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member glass-card">
+                        <div class="member-avatar">
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <h4 class="member-name">David Chen</h4>
+                        <p class="member-role">Events Manager</p>
+                        <div class="member-socials">
+                            <a href="#"><i class='bx bxl-linkedin'></i></a>
+                            <a href="#"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming <span class="text-gradient">Events</span></h2>
+                <p class="section-subtitle">Join our workshops, hackathons, and coding contests.</p>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card glass-card">
+                    <div class="event-date">
+                        <span class="day">24</span>
+                        <span class="month">OCT</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-tags">
+                            <span class="tag tag-primary">Workshop</span>
+                        </div>
+                        <h3 class="event-title">Mastering Dynamic Programming</h3>
+                        <p class="event-desc">A deep dive into DP concepts, solving classic problems, and optimizing approaches.</p>
+                        <div class="event-meta">
+                            <span><i class='bx bx-time'></i> 5:00 PM - 7:00 PM</span>
+                            <span><i class='bx bx-map'></i> Lab 3, CS Block</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm register-btn" data-event="Mastering Dynamic Programming">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card glass-card">
+                    <div class="event-date">
+                        <span class="day">05</span>
+                        <span class="month">NOV</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-tags">
+                            <span class="tag tag-accent">Hackathon</span>
+                        </div>
+                        <h3 class="event-title">CodeFest RIT 2026</h3>
+                        <p class="event-desc">Annual 24-hour hackathon to build solutions for campus problems.</p>
+                        <div class="event-meta">
+                            <span><i class='bx bx-time'></i> 10:00 AM (24 Hours)</span>
+                            <span><i class='bx bx-map'></i> Main Auditorium</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm register-btn" data-event="CodeFest RIT 2026">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card glass-card">
+                    <div class="event-date">
+                        <span class="day">12</span>
+                        <span class="month">NOV</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-tags">
+                            <span class="tag tag-primary">Contest</span>
+                        </div>
+                        <h3 class="event-title">Weekly Coding Challenge #45</h3>
+                        <p class="event-desc">Test your algorithmic skills against peers in our weekly competitive programming contest.</p>
+                        <div class="event-meta">
+                            <span><i class='bx bx-time'></i> 6:00 PM - 8:00 PM</span>
+                            <span><i class='bx bx-laptop'></i> Online (GfG Practice)</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm register-btn" data-event="Weekly Coding Challenge #45">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="resources">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Learning <span class="text-gradient">Resources</span></h2>
+                <p class="section-subtitle">Curated pathways and materials to accelerate your learning journey.</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card glass-card">
+                    <div class="resource-icon"><i class='bx bx-data'></i></div>
+                    <h3>DSA Preparation</h3>
+                    <p>Comprehensive guides and problem lists for Data Structures and Algorithms specifically tailored for interviews.</p>
+                    <ul class="resource-links">
+                        <li><a href="#"><i class='bx bx-check-circle'></i> Must Do Coding Questions</a></li>
+                        <li><a href="#"><i class='bx bx-check-circle'></i> SDE Sheet by GfG</a></li>
+                        <li><a href="#"><i class='bx bx-check-circle'></i> Topic-wise Practice</a></li>
+                    </ul>
+                    <a href="#" class="resource-action">View Pathway <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+
+                <div class="resource-card glass-card">
+                    <div class="resource-icon"><i class='bx bx-window-alt'></i></div>
+                    <h3>Web Development</h3>
+                    <p>Modern frontend and backend development roadmaps, from HTML/CSS to advanced React and Node.js.</p>
+                    <ul class="resource-links">
+                        <li><a href="#"><i class='bx bx-check-circle'></i> Frontend Roadmap</a></li>
+                        <li><a href="#"><i class='bx bx-check-circle'></i> Build a Portfolio</a></li>
+                        <li><a href="#"><i class='bx bx-check-circle'></i> Backend with APIs</a></li>
+                    </ul>
+                    <a href="#" class="resource-action">View Pathway <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+
+                <div class="resource-card glass-card">
+                    <div class="resource-icon"><i class='bx bx-brain'></i></div>
+                    <h3>Core CS Subjects</h3>
+                    <p>Essential notes and quick revision guides for core computer science subjects asked in technical rounds.</p>
+                    <ul class="resource-links">
+                        <li><a href="#"><i class='bx bx-check-circle'></i> Operating Systems</a></li>
+                        <li><a href="#"><i class='bx bx-check-circle'></i> DBMS Architecture</a></li>
+                        <li><a href="#"><i class='bx bx-check-circle'></i> Computer Networks</a></li>
+                    </ul>
+                    <a href="#" class="resource-action">View Pathway <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark" id="community">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Community <span class="text-gradient">Hub</span></h2>
+                <p class="section-subtitle">Track your progress, see top performers, and read our latest updates.</p>
+            </div>
+
+            <div class="community-layout">
+                <div class="leaderboard glass-card">
+                    <div class="leaderboard-header">
+                        <h3><i class='bx bx-trophy text-primary'></i> Top Coders of the Month</h3>
+                    </div>
+                    <div class="leaderboard-list">
+                        <div class="leaderboard-item top-1">
+                            <div class="rank">1</div>
+                            <div class="user-info">
+                                <div class="avatar"><i class='bx bxs-user'></i></div>
+                                <span class="name">Elena R.</span>
+                            </div>
+                            <div class="score">
+                                <span>2450</span>
+                                <span class="score-label">pts</span>
+                            </div>
+                        </div>
+                        <div class="leaderboard-item top-2">
+                            <div class="rank">2</div>
+                            <div class="user-info">
+                                <div class="avatar"><i class='bx bxs-user'></i></div>
+                                <span class="name">Marcus T.</span>
+                            </div>
+                            <div class="score">
+                                <span>2120</span>
+                                <span class="score-label">pts</span>
+                            </div>
+                        </div>
+                        <div class="leaderboard-item top-3">
+                            <div class="rank">3</div>
+                            <div class="user-info">
+                                <div class="avatar"><i class='bx bxs-user'></i></div>
+                                <span class="name">Sophia K.</span>
+                            </div>
+                            <div class="score">
+                                <span>1980</span>
+                                <span class="score-label">pts</span>
+                            </div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank">4</div>
+                            <div class="user-info">
+                                <div class="avatar"><i class='bx bxs-user'></i></div>
+                                <span class="name">James L.</span>
+                            </div>
+                            <div class="score">
+                                <span>1850</span>
+                                <span class="score-label">pts</span>
+                            </div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank">5</div>
+                            <div class="user-info">
+                                <div class="avatar"><i class='bx bxs-user'></i></div>
+                                <span class="name">Anita P.</span>
+                            </div>
+                            <div class="score">
+                                <span>1760</span>
+                                <span class="score-label">pts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="updates-section">
+                    <h3 class="subsection-title mb-4">Latest Blog & Updates</h3>
+                    
+                    <div class="update-card glass-card">
+                        <div class="update-date">Oct 15, 2026</div>
+                        <h4>How to approach your first hackathon</h4>
+                        <p>Tips, tricks, and mindset required to make the most out of a 24-hour coding sprint...</p>
+                        <a href="#" class="read-more">Read Full Article</a>
+                    </div>
+                    
+                    <div class="update-card glass-card">
+                        <div class="update-date">Oct 02, 2026</div>
+                        <h4>Tackling Graphs: A beginner's guide</h4>
+                        <p>Understanding BFS, DFS, and when to apply them in real-world technical interviews...</p>
+                        <a href="#" class="read-more">Read Full Article</a>
+                    </div>
+
+                    <div class="update-card glass-card highlight-update">
+                        <div class="update-badge">Announcement</div>
+                        <h4>GfG Campus Ambassador Program Open!</h4>
+                        <p>Applications are now open for the next cohort. Represent GfG in your department.</p>
+                        <a href="#" class="read-more">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+                    <p class="section-subtitle">Have questions? Want to collaborate or sponsor an event? Reach out to us.</p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="icon"><i class='bx bx-envelope'></i></div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>hello@gfg-rit.edu</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon"><i class='bx bx-map'></i></div>
+                            <div>
+                                <h4>Find Us</h4>
+                                <p>Club Room 402, CS Department, RIT Campus</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links-large">
+                        <a href="#" class="social-btn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" class="social-btn"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" class="social-btn"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="social-btn"><i class='bx bxl-discord'></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form glass-card">
+                    <form id="query-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="event">Event Inquiry</option>
+                                <option value="membership">Membership</option>
+                                <option value="sponsorship">Sponsorship/Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message <i class='bx bx-send'></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo-box">
+                        <i class='bx bx-code-alt'></i>
+                    </div>
+                    <span class="footer-logo-text">GfG Campus Club RIT</span>
+                    <p class="footer-desc">Building a stronger coding culture and transforming students into world-class developers.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#events">Events</a>
+                    <a href="#resources">Resources</a>
+                    <a href="#community">Leaderboard</a>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Code of Conduct</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GeeksforGeeks Campus Club RIT. All rights reserved.</p>
+                <div class="made-with">
+                    Made with <i class='bx bxs-heart text-primary'></i> by the RIT Community
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="registration-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 id="modal-event-title">Event Registration</h3>
+                <button class="modal-close" id="modal-close"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="event-reg-form">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-roll">Roll Number / Student ID</label>
+                        <input type="text" id="reg-roll" required placeholder="e.g. 23CS001">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">College Email</label>
+                        <input type="email" id="reg-email" required placeholder="you@student.rit.edu">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Secure My Spot</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="ai-chat-widget">
+        <button class="chat-toggle" id="chat-toggle">
+            <i class='bx bx-bot'></i>
+        </button>
+        <div class="chat-window glass-card" id="chat-window">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class='bx bx-bot'></i>
+                    <span>GfG Assistant</span>
+                </div>
+                <div class="chat-status">
+                    <span class="status-dot"></span> Online
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    <div class="message-content">Hello there! I'm the GfG RIT Assistant. How can I help you today? You can ask me about events, resources, or club membership.</div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type your question...">
+                <button id="send-btn" class="send-btn"><i class='bx bx-send'></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
