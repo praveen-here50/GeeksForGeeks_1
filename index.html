@@ -22,13 +22,13 @@
             </a>
             <div class="nav-links">
                 <a href="#about" class="nav-link">About</a>
+                <a href="contest.html" class="nav-link">Contests</a>
                 <a href="#events" class="nav-link">Events</a>
                 <a href="#resources" class="nav-link">Resources</a>
-                <a href="#community" class="nav-link">Community</a>
             </div>
             <div class="nav-actions">
                 <a href="#contact" class="btn btn-outline">Contact Us</a>
-                <button class="btn btn-primary" id="join-btn">Join Club</button>
+                <a href="auth.html" class="btn btn-primary" id="nav-auth-btn">Join Club</a>
             </div>
             <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class='bx bx-menu'></i>
@@ -39,11 +39,10 @@
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-content">
             <a href="#about" class="mobile-nav-link">About</a>
+            <a href="contest.html" class="mobile-nav-link">Contests</a>
             <a href="#events" class="mobile-nav-link">Events</a>
-            <a href="#resources" class="mobile-nav-link">Resources</a>
-            <a href="#community" class="mobile-nav-link">Community</a>
             <a href="#contact" class="mobile-nav-link">Contact Us</a>
-            <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Join Club</button>
+            <a href="auth.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;" id="mobile-auth-btn">Join Club</a>
         </div>
     </div>
 
@@ -504,10 +503,47 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="join-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>Join GfG RIT</h3>
+                <button class="modal-close" id="join-modal-close"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="join-form">
+                    <div class="form-group">
+                        <label for="join-name">Full Name</label>
+                        <input type="text" id="join-name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="join-roll">Roll Number / Student ID</label>
+                        <input type="text" id="join-roll" required placeholder="e.g. 23CS001">
+                    </div>
+                    <div class="form-group">
+                        <label for="join-email">College Email</label>
+                        <input type="email" id="join-email" required placeholder="you@student.rit.edu">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="feature-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 id="feature-modal-title">Feature Coming Soon</h3>
+                <button class="modal-close" id="feature-modal-close"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body text-center" style="padding: 2rem 0;">
+                <div class="card-icon" style="margin-bottom: 1rem;"><i class='bx bx-time-five'></i></div>
+                <p id="feature-modal-desc" style="color: var(--text-muted); margin-bottom: 1.5rem;">This feature is currently under development. Check back later!</p>
+                <button class="btn btn-outline w-100" id="feature-modal-ok">Okay, Got It</button>
+            </div>
+        </div>
+    </div>
+
     <div class="ai-chat-widget">
-        <button class="chat-toggle" id="chat-toggle">
-            <i class='bx bx-bot'></i>
-        </button>
         <div class="chat-window glass-card" id="chat-window">
             <div class="chat-header">
                 <div class="chat-title">
@@ -528,6 +564,9 @@
                 <button id="send-btn" class="send-btn"><i class='bx bx-send'></i></button>
             </div>
         </div>
+        <button class="chat-toggle" id="chat-toggle">
+            <i class='bx bx-bot'></i>
+        </button>
     </div>
 
     <script src="script.js"></script>

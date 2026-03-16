@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - GfG Campus Club RIT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+            background: var(--bg-dark);
+        }
+
+        .sidebar {
+            background: rgba(10, 10, 10, 0.95);
+            border-right: 1px solid var(--glass-border);
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .sidebar-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .sidebar-brand span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-grow: 1;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            color: var(--text-muted);
+            transition: var(--transition);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .nav-item i { font-size: 1.25rem; }
+        .nav-item:hover { background: rgba(255, 255, 255, 0.03); color: var(--text-main); }
+        .nav-item.active { background: rgba(47, 141, 70, 0.1); color: var(--primary); border: 1px solid rgba(47, 141, 70, 0.2); }
+
+        .main-content { padding: 3rem 4rem; overflow-y: auto; }
+        .page-header { margin-bottom: 3rem; }
+        .page-title h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .page-title p { color: var(--text-muted); }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0.75rem;
+        }
+
+        .leaderboard-table th {
+            text-align: left;
+            padding: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .rank-card {
+            background: rgba(255, 255, 255, 0.02);
+            transition: var(--transition);
+        }
+
+        .rank-card:hover { background: rgba(255, 255, 255, 0.04); }
+
+        .rank-card td {
+            padding: 1.25rem 1rem;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .rank-card td:first-child { border-left: 1px solid var(--glass-border); border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+        .rank-card td:last-child { border-right: 1px solid var(--glass-border); border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+        .rank-number {
+            font-size: 1.25rem;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+            width: 50px;
+            text-align: center;
+        }
+
+        .rank-1 .rank-number { color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        .rank-2 .rank-number { color: #c0c0c0; text-shadow: 0 0 10px rgba(192, 192, 192, 0.5); }
+        .rank-3 .rank-number { color: #cd7f32; text-shadow: 0 0 10px rgba(205, 127, 50, 0.5); }
+
+        .student-info { display: flex; align-items: center; gap: 1rem; }
+        .student-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; }
+        .student-details h4 { font-size: 1rem; margin-bottom: 0.1rem; }
+        .student-details p { font-size: 0.8rem; color: var(--text-muted); }
+
+        .solved-count { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <a href="index.html" class="sidebar-brand">
+                <div class="sidebar-logo"><i class='bx bx-code-alt'></i></div>
+                <span>GfG RIT</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <i class='bx bxs-dashboard'></i><span>Dashboard</span>
+                </a>
+                <a href="practice.html" class="nav-item">
+                    <i class='bx bx-code-block'></i><span>Practice Arena</span>
+                </a>
+                <a href="contest.html" class="nav-item">
+                    <i class='bx bx-trophy'></i><span>Contests</span>
+                </a>
+                <a href="leaderboard.html" class="nav-item active">
+                    <i class='bx bx-bar-chart-alt-2'></i><span>Leaderboard</span>
+                </a>
+                <a href="dashboard.html#events-list" class="nav-item">
+                    <i class='bx bx-calendar-event'></i><span>My Events</span>
+                </a>
+                <a href="dashboard.html#submissions-list" class="nav-item">
+                    <i class='bx bx-trophy'></i><span>My Contests</span>
+                </a>
+                <a href="#" class="nav-item logout-btn" id="logout-btn" style="margin-top: auto;">
+                    <i class='bx bx-log-out'></i><span>Log Out</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <a href="index.html" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back to Home</a>
+                <div class="page-title">
+                    <h1>Global Leaderboard</h1>
+                    <p>Track the top coders of RIT Campus Club.</p>
+                </div>
+            </div>
+
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th style="width: 80px; text-align: center;">Rank</th>
+                        <th>Student</th>
+                        <th>Department</th>
+                        <th style="text-align: center;">Problems Solved</th>
+                        <th style="text-align: center;">Streak</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Sample Data -->
+                    <tr class="rank-card rank-1">
+                        <td><div class="rank-number">1</div></td>
+                        <td>
+                            <div class="student-info">
+                                <div class="student-avatar" style="background: #ffd700; color: #000;">PD</div>
+                                <div class="student-details">
+                                    <h4>Praveen D</h4>
+                                    <p>@praveen_gfg</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>CSE</td>
+                        <td style="text-align: center;"><span class="solved-count">485</span></td>
+                        <td style="text-align: center;"><i class='bx bxs-hot' style="color: #ff5f56"></i> 32 Days</td>
+                    </tr>
+                    <tr class="rank-card rank-2">
+                        <td><div class="rank-number">2</div></td>
+                        <td>
+                            <div class="student-info">
+                                <div class="student-avatar" style="background: #c0c0c0; color: #000;">AK</div>
+                                <div class="student-details">
+                                    <h4>Ananya K</h4>
+                                    <p>@ananya_codes</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>ISE</td>
+                        <td style="text-align: center;"><span class="solved-count">412</span></td>
+                        <td style="text-align: center;"><i class='bx bxs-hot' style="color: #ff5f56"></i> 18 Days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script>
+        // Check Authentication
+        if (!localStorage.getItem('gfg_token')) {
+            window.location.href = 'auth.html';
+        }
+
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('gfg_token');
+            localStorage.removeItem('gfg_user');
+            window.location.href = 'index.html';
+        });
+
+        // Fetch Leaderboard (Mocking for now, could be an API)
+        async function loadLeaderboard() {
+            try {
+                const response = await fetch('/api/leaderboard'); // We can add this to server.js
+                const users = await response.json();
+                
+                const body = document.getElementById('leaderboard-body');
+                body.innerHTML = '';
+                
+                users.forEach((user, index) => {
+                    const rank = index + 1;
+                    const rankClass = rank <= 3 ? `rank-${rank}` : '';
+                    const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                    
+                    const row = document.createElement('tr');
+                    row.className = `rank-card ${rankClass}`;
+                    row.innerHTML = `
+                        <td><div class="rank-number">${rank}</div></td>
+                        <td>
+                            <div class="student-info">
+                                <div class="student-avatar">${initials}</div>
+                                <div class="student-details">
+                                    <h4>${user.name}</h4>
+                                    <p>${user.email.split('@')[0]}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${user.department}</td>
+                        <td style="text-align: center;"><span class="solved-count">${user.problems_solved || 0}</span></td>
+                        <td style="text-align: center;"><i class='bx bxs-hot' style="color: #ff5f56"></i> ${Math.floor(Math.random() * 10)} Days</td>
+                    `;
+                    body.appendChild(row);
+                });
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        // Trigger load
+        loadLeaderboard();
+    </script>
+</body>
+</html>

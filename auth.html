@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication - GfG Campus Club RIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        .auth-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-back-home {
+            position: absolute;
+            top: -3.5rem;
+            left: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .auth-back-home:hover { color: var(--primary); transform: translateX(-5px); }
+
+        .auth-card {
+            padding: 3rem;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .auth-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 16px;
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px var(--primary-glow);
+        }
+
+        .auth-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .auth-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .auth-form-group label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .auth-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-input-wrapper i {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+        }
+
+        .auth-input-wrapper input, .auth-input-wrapper select {
+            width: 100%;
+            padding: 0.875rem 1rem 0.875rem 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .auth-input-wrapper input:focus, .auth-input-wrapper select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(47, 141, 70, 0.05);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .auth-switch a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        #register-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-canvas">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <a href="index.html" class="auth-back-home"><i class='bx bx-left-arrow-alt'></i> Back to Home</a>
+            
+            <!-- Login Section -->
+            <div class="glass-card auth-card" id="login-section">
+                <div class="auth-header">
+                    <div class="auth-logo"><i class='bx bx-code-alt'></i></div>
+                    <h1 class="auth-title">Welcome Back</h1>
+                    <p class="auth-subtitle">Sign in to access your dashboard and track progress.</p>
+                </div>
+
+                <form class="auth-form" id="login-form">
+                    <div class="auth-form-group">
+                        <label>Email Address</label>
+                        <div class="auth-input-wrapper">
+                            <i class='bx bx-envelope'></i>
+                            <input type="email" id="login-email" required placeholder="name@student.rit.edu">
+                        </div>
+                    </div>
+                    
+                    <div class="auth-form-group">
+                        <div style="display: flex; justify-content: space-between;">
+                            <label>Password</label>
+                            <a href="#" style="font-size: 0.8rem; color: var(--primary);">Forgot?</a>
+                        </div>
+                        <div class="auth-input-wrapper">
+                            <i class='bx bx-lock-alt'></i>
+                            <input type="password" id="login-password" required placeholder="••••••••">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100" style="margin-top: 1rem;">
+                        Sign In <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </form>
+
+                <div class="auth-switch">
+                    New here? <a href="#" id="show-register">Create an account</a>
+                </div>
+            </div>
+
+            <!-- Register Section -->
+            <div class="glass-card auth-card" id="register-section">
+                <div class="auth-header">
+                    <div class="auth-logo"><i class='bx bx-user-plus'></i></div>
+                    <h1 class="auth-title">Join the Club</h1>
+                    <p class="auth-subtitle">Create your student profile today.</p>
+                </div>
+
+                <form class="auth-form" id="register-form">
+                    <div class="auth-form-group">
+                        <label>Full Name</label>
+                        <div class="auth-input-wrapper">
+                            <i class='bx bx-user'></i>
+                            <input type="text" id="reg-name" required placeholder="John Doe">
+                        </div>
+                    </div>
+
+                    <div class="auth-form-group">
+                        <label>College Email</label>
+                        <div class="auth-input-wrapper">
+                            <i class='bx bx-envelope'></i>
+                            <input type="email" id="reg-email" required placeholder="name@student.rit.edu">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="auth-form-group" style="flex: 1;">
+                            <label>Department</label>
+                            <div class="auth-input-wrapper">
+                                <i class='bx bx-building'></i>
+                                <select id="reg-dept" required style="padding-left: 3rem;">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="CSE">CSE</option>
+                                    <option value="ISE">ISE</option>
+                                    <option value="ECE">ECE</option>
+                                    <option value="Mechanical">Mechanical</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="auth-form-group" style="flex: 1;">
+                            <label>Year</label>
+                            <div class="auth-input-wrapper">
+                                <i class='bx bx-calendar'></i>
+                                <select id="reg-year" required style="padding-left: 3rem;">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auth-form-group">
+                        <label>Password</label>
+                        <div class="auth-input-wrapper">
+                            <i class='bx bx-lock-alt'></i>
+                            <input type="password" id="reg-password" required placeholder="Create a password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100" style="margin-top: 1rem;">
+                        Create Account
+                    </button>
+                </form>
+
+                <div class="auth-switch">
+                    Already an account? <a href="#" id="show-login">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div class="modal-overlay" id="alert-modal">
+        <div class="modal-content glass-card message-modal">
+            <div class="modal-body text-center" style="padding: 2rem 0;">
+                <div class="card-icon" style="margin-bottom: 1rem;" id="alert-icon"><i class='bx bx-info-circle'></i></div>
+                <h3 id="alert-title" style="margin-bottom: 0.5rem;">Alert</h3>
+                <p id="alert-desc" style="color: var(--text-muted); margin-bottom: 1.5rem;">Message goes here.</p>
+                <button class="btn btn-primary w-100" id="alert-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
